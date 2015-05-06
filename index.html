@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>AngularJS Hello</title>
 </head>
-<body>
-    Name : <input type="text" ng-model="name">
+<body ng-init="name='James'">
+    <div ng-hide="isHidden">
+        Name : <input type="text" ng-model="name">
+        <span ng-bind="name"></span>
+    </div>
+    Hide : <input type="checkbox" ng-model="isHidden">
     <br>
-    {{ name }}
-    <script src="libs/angularjs/angular.min.js"></script>
+    <button ng-click="name='Michelle'">Change name</button>
+   
+    <script src="libs/angularjs/angular.js"></script>
     <script>
     var app = angular.module('myApp', []);
     
