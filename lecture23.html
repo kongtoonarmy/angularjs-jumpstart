@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Hello</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-init="curtomers=[{joined :'2000-12-02', name:'John', city:'Chandler', orderTotal:9.9956},
+    					  {joined :'1965-01-25', name:'Zed', city:'Las Vegas', orderTotal:19.99},
+    					  {joined :'1944-06-15', name:'Tina', city:'New York', orderTotal:44.99},
+    					  {joined :'1995-03-28', name:'Zed', city:'Seattle', orderTotal:101.5}]">
+    <h2>Customers<h2>
+    Filter: <input type="text" ng-model="nameText">
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>City</td>
+			<td>Order</td>
+			<td>Joined</td>
+		</tr>
+		<tr ng-repeat"cust in customers">
+			<td>{{ cust.name }}</td>
+			<td></td>
+		</tr>
+	</table>
+	<br>
+    
+    <script src="libs/angularjs/angular.js"></script>
+    <script> 
+    var app = angular.module('myApp', []);
+	</script>
+</body>
+</html>

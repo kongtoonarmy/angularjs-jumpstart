@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Hello</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-init="names=['Dave', 'Jeff', 'Heedy', 'Danny']">
+    <h3>Iterating through data with ng-repeat</h3>
+    <ul>
+    	<li ng-repeat="name in names">{{ name }}</li>
+    </ul>
+   
+    <script src="libs/angularjs/angular.js"></script>
+    <script>
+    var app = angular.module('myApp', []);
+	</script>
+</body>
+</html>

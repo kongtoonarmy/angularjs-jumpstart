@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Hello</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-init="people=[{name:'John', city:'Chandler', total:23.15779}, 
+   					   {name:'Dave', city:'Seattle', total:856.5885}, 
+   					   {name:'Tina', city:'New York', total:52}]">
+    <h3>Iterating through data with ng-repeat</h3>
+    <input type="text" ng-model="nameText">
+	<ul>
+    	<li ng-repeat="person in people | filter:nameText | orderBy:'city'">
+    		{{ person.name + ' ' + person.city }} 
+    		and currency is {{ person.total | currency }} 
+    	</li> 
+    </ul>  
+	<br>
+    
+    <script src="libs/angularjs/angular.js"></script>
+    <script> 
+    var app = angular.module('myApp', []);
+	</script>
+</body>
+</html>

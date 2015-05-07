@@ -8,12 +8,16 @@
 <body ng-init="data={name:'James', isVisible: true, loggedIn: false, status: 'red'}">
     <div>
     	<div ng-switch on="data.loggedIn"> 
-    		<div ng-switch-when="true"> 
+    		<div ng-switch-when="true" ng-class="data.status"> 
     			Welcome {{ data.name }}
     		</div>
-    		<div ng-switch-default>Login</div>
+    		<div ng-switch-default ng-class="data.status">Login</div> 
     	</div>
     	
+    </div>
+    <div ng-show="data.isVisible">
+    	Name : <input type="text" ng-model="data.name">
+    	{{ data.name }}
     </div>
    
     <script src="libs/angularjs/angular.js"></script>
