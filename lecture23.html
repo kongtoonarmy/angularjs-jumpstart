@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>AngularJS Hello</title>
+    <title>Interating Over Data</title>
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body ng-init="customers=[{joined :'2000-12-02', name:'John', city:'Chandler', orderTotal:9.9956},
@@ -10,18 +10,18 @@
     					  {joined :'1944-06-15', name:'Tina', city:'New York', orderTotal:44.99},
     					  {joined :'1995-03-28', name:'Zed', city:'Seattle', orderTotal:101.5}]">
 	<h2>Customers</h2>
-    Filter: <input type="text" ng-model="nameText">
+    Filter: <input type="text">
 	<table>
 		<tr>
 			<td>Name</td>
 			<td>City</td>
-			<td>Order</td>
+			<td>Order Total</td>
 			<td>Joined</td>
 		</tr>
 		<tr ng-repeat="cust in customers">
 			<td>{{ cust.name | uppercase }}</td>
 			<td>{{ cust.city | lowercase }}</td>
-			<td>{{ cust.orderTotal | currency:'$d:' }}</td>
+			<td>{{ cust.orderTotal | currency }}</td>
 			<td>{{ cust.joined | date:'longDate' }}</td>
 		</tr>
 	</table>

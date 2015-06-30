@@ -18,7 +18,7 @@
 			<td>Order</td>
 			<td>Joined</td>
 		</tr>
-		<tr ng-repeat="cust in customers | filter:customersFilter | orderBy:'name':reverse=true">
+		<tr ng-repeat="cust in customers | limitTo:2 | filter:customersFilter | orderBy:'name':reverse=true">
 			<td>{{ cust.name | uppercase }}</td>
 			<td>{{ cust.city | lowercase }}</td>
 			<td>{{ cust.orderTotal | currency:'$d:' }}</td>
