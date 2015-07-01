@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture 034 - Using "Controller As" Syntax</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-controller="customersController as ctrl">
+	<h2>Customers</h2>
+    Filter: <input type="text" ng-model="customersFilter.name">
+	<table>
+		<tr>
+			<th ng-click="ctrl.doSort('name')">Name</th>
+			<th ng-click="ctrl.doSort('city')">City</th>
+			<th ng-click="ctrl.doSort('orderTotal')">Order</th> 
+			<th ng-click="ctrl.doSort('joined')">Joined</th>
+		</tr>
+		<tr ng-repeat="cust in ctrl.customers | filter:customersFilter | orderBy:sortBy:reverse">
+			<td>{{ cust.name | uppercase }}</td>
+			<td>{{ cust.city | lowercase }}</td>
+			<td>{{ cust.orderTotal | currency }}</td>
+			<td>{{ cust.joined | date }}</td>
+		</tr>
+	</table>
+	<br>
+	<span>Total customers: {{ ctrl.customers.length }}</span>
+    reverse = {{ ctrl.reverse }}
+    
+    <script src="libs/angularjs/angular.js"></script>
+	<script src="app/controllers/customersControllerWithAs.js"></script>
+</body>
+</html>
