@@ -13,7 +13,7 @@
 			<th ng-click="doSort('name')">Name</th>
 			<th ng-click="doSort('city')">City</th>
 			<th ng-click="doSort('orderTotal')">Order</th>
-			<th ng-click="doSort('joined')">Joined</th>
+			<th ng-click="doSort('joined') ">Joined</th>
 		</tr>
 		<tr ng-repeat="cust in customers | filter:customersFilter | orderBy:sortBy:reverse">
 			<td>{{ cust.name | uppercase }}</td>
@@ -26,6 +26,7 @@
 	<span>Total customers: {{ customers.length }}</span>
 
     <script src="libs/angularjs/angular.js"></script>
+    <script src="libs/angularjs/angular-route.js"></script>
 	<script src="app/app.js"></script>
 	<script src="app/controllers/customersController.js"></script>
 </body>

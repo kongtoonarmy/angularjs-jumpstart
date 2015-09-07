@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="customersApp">
 <head>
     <meta charset="UTF-8">
-    <title>AngularJS Hello</title>
+    <title>Lecture 38</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
-<body ng-init="name='James'">
-    <div ng-hide="isHidden">
-        Name : <input type="text" ng-model="name">
-        <span ng-bind="name"></span>
-    </div>
-    Hide : <input type="checkbox" ng-model="isHidden">
-    <br>
-    <button ng-click="name='Michelle'">Change name</button>
-   
+<body>
+	
+    <div ng-view></div>
+
     <script src="libs/angularjs/angular.js"></script>
-    <script>
-    var app = angular.module('myApp', []);
-    
-</script>
+    <script src="libs/angularjs/angular-route.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/customersController.js"></script>
+	<script src="app/controllers/ordersController.js"></script>
 </body>
 </html>
