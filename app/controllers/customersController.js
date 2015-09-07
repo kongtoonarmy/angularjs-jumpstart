@@ -1,6 +1,6 @@
 // Option 1
 
-/*var app = angular.module('customersApp', []);
+var app = angular.module('myApp', []);
 app.controller('customersController', function($scope) {
     $scope.sortBy = 'name';
     $scope.reverse = false;
@@ -13,12 +13,12 @@ app.controller('customersController', function($scope) {
         $scope.sortBy = propName;
         $scope.reverse = !$scope.reverse;                       
     }
-});*/
+});
 
 
 // Option 2
 
-(function() {
+/*(function() {
     angular.module('customersApp').controller('CustomersController', function($scope) {
         $scope.sortBy = 'name';
         $scope.reverse = false;
@@ -33,7 +33,7 @@ app.controller('customersController', function($scope) {
 ;       };
 
     });
-}());
+}());*/
 
 // Option 3
 
