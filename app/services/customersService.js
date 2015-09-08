@@ -78,8 +78,6 @@ app.service('customersService', function() {
         return {};
     }
 
-    return factory;
-
 });
 
 
