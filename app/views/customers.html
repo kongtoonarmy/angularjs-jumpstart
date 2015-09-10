@@ -9,7 +9,7 @@ Filter: <input type="text" ng-model="customersFilter.name"><br><br>
         <th>Orders</th>
         <th>Delete</th>
     </tr>
-    <tr ng-repeat="cust in customers | filter:customersFilter | orderBy:sortBy:reverse">
+    <tr ng-repeat="cust in customers | filter:customersFilter | orderBy:sortBy:reverse" class="repeat-animation">
         <td>{{ cust.name | uppercase }}</td>
         <td>{{ cust.city | lowercase }}</td>
         <td>{{ cust.orderTotal | currency }}</td>
