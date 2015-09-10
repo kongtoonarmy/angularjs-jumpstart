@@ -11,6 +11,14 @@ app.factory('customersFactory', function($http) {
     factory.getCustomer = function (customerId) {
         return $http.get('/customers/' + customerId);
     }
+    
+    factory.getOrders = function() {
+        return $http.get('/orders');
+    }
+    
+    factory.deleteCustomer = function(customerId) {
+        return $http.delete('/customers/' + customerId);
+    }
 
     return factory;
 
